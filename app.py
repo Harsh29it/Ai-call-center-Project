@@ -2,7 +2,7 @@ from flask import Flask, request
 from twilio.twiml.voice_response import VoiceResponse
 
 app = Flask(__name__)
-
+# for connecting the call 
 @app.route("/voice", methods=['POST'])
 def voice():
     print(">>> /voice hit")
@@ -11,6 +11,7 @@ def voice():
     gather.say("Welcome to the AI Call Center. Please say your name.")
     return str(resp)
 
+# asking name 
 @app.route("/name", methods=['POST'])
 def name():
     name = request.form.get('SpeechResult')
@@ -26,6 +27,7 @@ def name():
     gather.say(f"Thanks {name}. Now please say your age.")
     return str(resp)
 
+# asking age
 @app.route("/age", methods=['POST'])
 def age():
     age = request.form.get('SpeechResult')
@@ -38,7 +40,7 @@ def age():
         return str(resp)
 
     resp.say("Connecting you to a human agent.")
-    resp.dial("+9174668083008")  # Replace with your verified number
+    resp.dial("+9174668083008")  # number of the avilabe agent
     return str(resp)
 
 if __name__ == "__main__":
