@@ -1,0 +1,9 @@
+# Core dependencies
+Flask==2.3.2
+twilio==8.10.0
+
+# Optional for debugging or testing
+requests==2.31.0
+
+# If you use dotenv for security (optional)
+python-dotenv==1.0.1
