@@ -1,0 +1,7 @@
+In this project, I built a working prototype of an AI-powered call center using Twilio and Flask. The goal was to simulate a customer calling an AI system, which would then gather basic information and route the call to an available agent.
+
+The system works in three stages. When a call is initiated, the AI bot (via Twilio’s Voice API) greets the user and uses speech recognition to collect their name and age. These voice inputs are processed by a Flask backend running locally, exposed via ngrok. Once the required information is collected, the system routes the user to a human agent — ensuring real-time voice flow without human intervention until transfer.
+
+To make the system robust, I implemented logic to handle cases when speech is not recognized or when a user remains silent. Additionally, I built a UI simulation using V0.dev to visualize agent status, active calls, and system metrics. The entire call flow is logged in the backend terminal, allowing traceability and debugging.
+
+This project showcases how conversational AI and cloud communication platforms like Twilio can automate real-time human interaction and enable scalable voice-based support systems.
